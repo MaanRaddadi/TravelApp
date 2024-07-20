@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Journal</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="main-container expanded">
+        <div class="input-container">
+          <div class="holder zip">
+            <label for="zip">You are traveling to ? </label>
+            <input
+              type="text"
+              id="city"
+              placeholder="Enter City Name"
+              required
+            />
+          </div>
+          <div class="holder feel">
+            <label for="feelings">Departing On ?</label>
+            <input type="date" id="date" placeholder="Enter Date" required />
+          </div>
+          <button id="generate" type="submit">Search Trips</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <a class="button" href="#popup">Open Modal</a> -->
+    <div class="popup" id="popup">
+      <div class="popup-inner">
+        <div class="popup__photo">
+          <img alt="" id="placeImage" />
+        </div>
+        <div class="popup__text">
+          <h1 id="countryName"></h1>
+          <h4 id="cityName"></h4>
+          <h4 id="departingDate"></h4>
+          <h4 id="weather">Weather:</h4>
+
+          <table id="weatherTable">
+            <tr>
+              <th>Date</th>
+              <th>Tempreture C°</th>
+              <th>Weather</th>
+            </tr>
+          </table>
+        </div>
+        <a class="popup__close" href="#">X</a>
+      </div>
+    </div>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
