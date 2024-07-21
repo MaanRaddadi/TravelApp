@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 async function callWeatherForecastApi(req, res) {
   const lat = req.body.lat;
   const lng = req.body.lng;

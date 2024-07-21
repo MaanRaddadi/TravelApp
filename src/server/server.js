@@ -2,6 +2,7 @@ var path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
+const fetch = require("node-fetch");
 const { callGeoNamesApi } = require("./geoNamesApi");
 const { callCurrentWeatherApi } = require("./currentWeatherApi");
 const { callWeatherForecastApi } = require("./weatherForecastApi");

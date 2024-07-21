@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 async function getLocationImage(req, res) {
   const cityUrl = `https://pixabay.com/api/?key=${process.env.PIXABAY_KEY}&q=${req.body.city}&image_type=photo`;
   try {

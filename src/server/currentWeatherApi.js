@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
+const fetch = require("node-fetch");
 dotenv.config();
 
 async function callCurrentWeatherApi(req, res) {
